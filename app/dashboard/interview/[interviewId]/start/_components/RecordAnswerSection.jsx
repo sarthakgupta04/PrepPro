@@ -39,7 +39,7 @@ function RecordAnswerSection({mockInterviewQuestion,activeQuestionIndex,intervie
       },[results])
 
       useEffect(()=>{
-        if(!isRecording&&userAnswer?.length>10)
+        if(!isRecording&&userAnswer?.length>120)
         {
           UpdateUserAnswer();
         } 
@@ -60,7 +60,7 @@ function RecordAnswerSection({mockInterviewQuestion,activeQuestionIndex,intervie
         console.log(userAnswer)
         setLoading(true)
         const feedbackPrompt="Question:"+mockInterviewQuestion[activeQuestionIndex]?.question+
-        ", User Answer:"+userAnswer+",Depends on question and user answer for give interview question "+
+        ", User Answer:"+userAnswer+", Depends on question and user answer for give interview question "+
         " please give us rating for answer and feedback as area of improvmenet if any "+
         "in just 3 to 5 lines to improve it in JSON format with rating field and feedback field";
 
